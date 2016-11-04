@@ -105,7 +105,8 @@ Para una referencia completa del funcionamiento de la base de datos consulten la
     {
         "url": string - Url de la imagen de la banda
         "name": string - Nombre de la banda
-        "active": string - Flag que indica si la banda esta activa actualmente o no
+        "genres": string - Géneros de la banda
+        "popularity": int - Indicador de la popularidad de la banda
         "docType": string - Identificador del tipo de documento, siempre es "BAND"
         "albums": Array<string> - Array de Id's de artistas relacionados
         "artists": Array<string> - Array de Id's de artistas relacionados
@@ -190,7 +191,8 @@ En esta sección se detalla la configuración esperada de cada endpoint.
         {
             "url": "https://i.scdn.co/image/934c57df9fbdbbaa5e93b55994a4cb9571fd2085",
             "name": "The Beatles",
-            "active": "false",
+            "genres": "british invasion, classic rock, folk rock, mellow gold, merseybeat, protopunk, psychedelic rock, rock, singer-songwriter",
+            "popularity": 85,
             "docType": "BAND",
             "albums": [
               "R7W8b3fkyf5YZSIv",
@@ -224,7 +226,8 @@ En esta sección se detalla la configuración esperada de cada endpoint.
     Ejemplo de Server Response: {
         "url": "https://i.scdn.co/image/934c57df9fbdbbaa5e93b55994a4cb9571fd2085",
         "name": "The Beatles",
-        "active": "false",
+         "genres": "british invasion, classic rock, folk rock, mellow gold, merseybeat, protopunk, psychedelic rock, rock, singer-songwriter",
+        "popularity": 85,
         "docType": "BAND",
         "albums": [
             "R7W8b3fkyf5YZSIv",
