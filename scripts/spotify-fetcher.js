@@ -9,8 +9,26 @@ const spotifyApi = new SpotifyWebApi();
 
 console.log(colors.green('Fetching spotify data'));
 const artists = [
+    '7Ln80lUS6He07XvHI8qqHH', // Arctic Monkeys
+    '3WrFJ7ztbogyGnTHbHJFl2', // Beatles
+    '03r4iKL2g2442PT9n2UKsx', // Beastie Boys
+    '5M52tdBnJaKSvOpJGz8mfZ', // Black Sabbath
+    '7jy3rLJdDQY21OgRLCZ9sD', // Foo Fighters
+    '5SMVzTJyKFJ7TUb46DglcH', // Funkadelic
+    '3AA28KZvwAUcZuOKwyblJQ', // Gorillaz
+    '6J7biCazzYhU3gM9j1wfid', // Jamiroquai
+    '02NfyD6AlLA12crYzw5YcR', // Jane's Addiction
+    '36QJpDe2go2KgaRleHCDTp', // Led Zeppelin
+    '2ye2Wgw4gimLv2eAKyk1NB', // Metallica
+    '0X380XXQSNBYuleKzav5UO', // Nine Inch Nails
+    '6olE6TJLqED3rqDCT0FyPh', // Nirvana
+    '1w5Kfo2jwwIPruYS2UWh56', // Pearl Jam
+    '4pejUc4iciQfgdX6OKulQn', // Queens of the stone age
+    '4Z8W4fKeB5YxbusRsdQVPb', // David Bowie
     '0L8ExT028jH3ddEcZwqJJ5', // Red hot chili peppers
-    '40Yq4vzPs9VNUrIBG5Jr2i' // The smashing pumpkins
+    '22bE4uQ6baNwSHPVcDxLCe', // Rolling Stones
+    '40Yq4vzPs9VNUrIBG5Jr2i', // Smashing pumpkins
+    '5UqTO8smerMvxHYA5xsXb6' // Sonic Youth
 ];
 // Bands
 spotifyApi.getArtists(artists)
@@ -19,7 +37,7 @@ spotifyApi.getArtists(artists)
 
         if (data.body) {
             const artistsArray = data.body.artists;
-            console.log('...........................');
+
             //Writing bands file
             artistsArray.forEach(artist => {
                 const artistName = artist.name;
@@ -45,7 +63,7 @@ spotifyApi.getArtists(artists)
                                     albumsArray.push(album.id);
                                 }
                             });
-                            console.log('...........................', albumsArray);
+
                             spotifyApi.getAlbums(albumsArray)
                                 .then(data => {
                                     console.log(colors.green('----> Fetched ALBUM data'));
