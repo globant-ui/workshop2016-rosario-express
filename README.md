@@ -101,7 +101,7 @@ Para una referencia completa del funcionamiento de la base de datos consulten la
 
 **Bands**
 
-```json
+```
     {
         "url": string - Url de la imagen de la banda
         "name": string - Nombre de la banda
@@ -117,7 +117,7 @@ Para una referencia completa del funcionamiento de la base de datos consulten la
 
 **Albums**
 
-```json
+```
     {
         "url": string - Url de la imagen del album
         "name": string - Nombre del album
@@ -132,7 +132,7 @@ Para una referencia completa del funcionamiento de la base de datos consulten la
 
 **Artists**
 
-```json
+```
     {
         "url": string - Url de la imagen del artista
         "firstName": string - Nombre del artista
@@ -148,7 +148,7 @@ Para una referencia completa del funcionamiento de la base de datos consulten la
 
 **Tracks**
 
-```json
+```
     {
         "disc_number": int - Número de disco,
         "name": string - Nombre del track,
@@ -164,7 +164,7 @@ Para una referencia completa del funcionamiento de la base de datos consulten la
 
 **Comments**
 
-```json
+```
     {
         "docType": string - Identificador del tipo de documento, siempre es "COMMENT",
         "message": string - Mensaje del comentario,
@@ -185,6 +185,7 @@ En esta sección se detalla la configuración esperada de cada endpoint.
     Descripción: Retorna una lista de bandas
     Request URL Params: -
     Request payload: -
+    Formato de respuesta: JSON
     Ejemplo de Server Response: [
         {
             "url": "https://i.scdn.co/image/934c57df9fbdbbaa5e93b55994a4cb9571fd2085",
@@ -219,6 +220,7 @@ En esta sección se detalla la configuración esperada de cada endpoint.
     Descripción: Retorna una banda en particular
     Request URL Params: bandId: string
     Request payload: -
+    Formato de respuesta: JSON
     Ejemplo de Server Response: {
         "url": "https://i.scdn.co/image/934c57df9fbdbbaa5e93b55994a4cb9571fd2085",
         "name": "The Beatles",
@@ -251,7 +253,8 @@ En esta sección se detalla la configuración esperada de cada endpoint.
     Descripción: Retorna los artistas pertenecientes a una banda
     Request URL Params: bandId: string
     Request payload: -
-    Server Response: [
+    Formato de respuesta: JSON
+    Ejemplo de Server Response: [
         {
             "url": "https://i.scdn.co/image/96e2e59a1bf0b90cce97035ca48ad017cb9937c9",
             "firstName": "Paul",
@@ -273,7 +276,8 @@ En esta sección se detalla la configuración esperada de cada endpoint.
     Descripción: Retorna la lista de los albumnes de una banda
     Request URL Params: bandId: string
     Request payload: -
-    Server Response: [
+    Formato de respuesta: JSON
+    Ejemplo de Server Response: [
         {
             "url": "https://i.scdn.co/image/2782d94528b449fb6910300cc8c8f93ab8cc7a8d",
             "name": "The Beatles (Remastered)",
@@ -299,7 +303,8 @@ En esta sección se detalla la configuración esperada de cada endpoint.
     Descripción: Retorna los datos de un track en particular
     Request URL Params: trackId: string
     Request payload: -
-    Server Response: {
+    Formato de respuesta: JSON
+    Ejemplo de Server Response: {
       "disc_number": 1,
       "name": "Here Comes The Sun - Remastered",
       "track_number": 7,
@@ -318,7 +323,8 @@ En esta sección se detalla la configuración esperada de cada endpoint.
     Descripción: Retorna los comentarios asignados a un track en particular
     Request URL Params: trackId: string
     Request payload: -
-    Server Response: [
+    Formato de respuesta: JSON
+    Ejemplo de Server Response: [
         {
              "docType": "COMMENT",
              "message": "Este es un mensaje",
@@ -341,7 +347,8 @@ En esta sección se detalla la configuración esperada de cada endpoint.
         name: string,
         trackId: string
     }
-    Server Response: {
+    Formato de respuesta: JSON
+    Ejemplo de Server Response: {
         "docType": "COMMENT",
         "message": "Este es un mensaje",
         "name": "Matias",
