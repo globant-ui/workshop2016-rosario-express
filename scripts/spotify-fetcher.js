@@ -1,8 +1,8 @@
 'use strict';
+const _ = require('lodash');
 const colors = require('colors/safe');
 const Promise = require('bluebird');
 const fs = Promise.promisifyAll(require("fs"));
-const toSnakeCase = require('to-snake-case');
 const SpotifyWebApi = require('spotify-web-api-node');
 
 const spotifyApi = new SpotifyWebApi();
@@ -41,7 +41,7 @@ spotifyApi.getArtists(artists)
             //Writing bands file
             artistsArray.forEach(artist => {
                 const artistName = artist.name;
-                const fileName = `database/seeds/bands/${toSnakeCase(artistName)}_band.json`;
+                const fileName = `database/seeds/bands/${_.snakeCase(artistName)}_band.json`;
 
                 fs.writeFileAsync(fileName, JSON.stringify({
                     docType: "BAND",
@@ -91,11 +91,11 @@ spotifyApi.getArtists(artists)
                                                 };
                                             });
 
-                                            const tracksFileName = `database/seeds/tracks/${toSnakeCase(artistName)}_album_${albumKey}_tracks.json`;
+                                            const tracksFileName = `database/seeds/tracks/${_.snakeCase(artistName)}_album_${albumKey}_tracks.json`;
                                             fs.writeFileAsync(tracksFileName, JSON.stringify(tracks), "utf8");
                                         });
 
-                                        const fileName = `database/seeds/albums/${toSnakeCase(artistName)}_albums.json`;
+                                        const fileName = `database/seeds/albums/${_.snakeCase(artistName)}_albums.json`;
 
                                         //Writing albums file
                                         fs.writeFileAsync(fileName, JSON.stringify(albumsDataBaseArray), "utf8");
