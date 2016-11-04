@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node index.js",
     "dbseed": "node scripts/dbseed.js",
-    "dbdrop": "node scripts/dbdrop.js"
+    "dbdrop": "node scripts/dbdrop.js",
+    "spotify-fetcher": "node scripts/spotify-fetcher.js"
   },
   "repository": {
     "type": "git",
@@ -31,6 +32,9 @@
     "body-parser": "^1.15.2",
     "colors": "^1.1.2",
     "express": "^4.14.0",
-    "nedb": "^1.8.0"
+    "lodash": "^4.16.6",
+    "nedb": "^1.8.0",
+    "spotify-web-api-node": "^2.3.6",
+    "to-snake-case": "^1.0.0"
   }
 }
