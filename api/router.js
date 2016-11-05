@@ -2,6 +2,7 @@ const router = require('express').Router();
 const colors = require('colors/safe');
 const trackController = require('./controllers/TrackController').instance; //Sample controller
 const bandsController = require('./controllers/BandController').instance;
+const albumController = require('./controllers/AlbumController').instance;
 // Specific router middleware that shows the request timestamp
 router.use((req, res, next) => {
     console.log(`${colors.green('Requesting: ')} ${req.method}  ${req.path}  -> Time: `, Date.now());
@@ -12,5 +13,6 @@ router.use((req, res, next) => {
 router.get('/tracks', trackController.getList); //Sample route
 router.get('/bands', bandsController.getBands); //Bands route
 router.get('/bands/:bandId', bandsController.getBand); //Bands route
+router.get('/bands/:bandId/albums', albumController.getAlbum); //Albun route
 
 module.exports = router;
