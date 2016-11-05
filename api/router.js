@@ -10,6 +10,7 @@ router.use((req, res, next) => {
 
 // API Routes
 router.get('/tracks', trackController.getList); //Sample route
+router.get('/tracks/:id', trackController.getById);
 
 
 module.exports = router;
