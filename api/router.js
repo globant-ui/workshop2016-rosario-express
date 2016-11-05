@@ -10,6 +10,8 @@ router.use((req, res, next) => {
 
 // API Routes
 router.get('/tracks', trackController.getList); //Sample route
+router.get('/tracks/:id', trackController.getById);
+
 router.get('/bands', bandsController.getBands); //Bands route
 router.get('/bands/:bandId', bandsController.getBand); //Bands route
 
