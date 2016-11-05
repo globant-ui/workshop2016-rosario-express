@@ -1,7 +1,7 @@
 'use strict';
 
 const dataBase = require('../../database/Database').instance;
-const docTypes = require('../../Database/docTypes')
+const docTypes = require('../../database/docTypes');
 
 class BandModel {
     getBands() {
